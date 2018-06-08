@@ -23,7 +23,7 @@ class PetsController < ApplicationController
     erb :'/pets/show'
   end
 
-  
+
   get '/pets/:id/edit' do
     @pet = Pet.find(params[:id])
     erb :'/pets/edit'
@@ -31,7 +31,7 @@ class PetsController < ApplicationController
 
 
   post '/pets/:id' do
-    binding.pry 
+    binding.pry
     @pet = Pet.find(params[:id])
     @pet.update(params["pet"])
     if !params["owner"]["name"].empty?
